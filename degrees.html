@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Number Event</title>
+</head>
+<body>
+<form style="width:300px;float:left;height:3000px;">
+    <fieldset>
+  Fahrenheit:<input type="number" oninput="convertToCelsius(this.value)" placeholder="Enter Fahrenheit">
+<hr>
+<p id="celsius" style="color:black"></p>
+<p id="roundedcelsius" style="color:black"></p>
+</fieldset>
+</form>
+<form style="width:400px;float:left;">
+    <fieldset>
+Celsius: <input type="number" oninput="convertTofahrenheit(this.value)" placeholder="Enter celsius">
+<hr>
+
+<p id="fahrenheit" style="color:black"></p>
+<p id="roundedfahrenheit" style="color:black"></p>
+</fieldset>
+</form>
+<script>
+
+function convertToCelsius( fahrenheit) {
+  let celsius = (fahrenheit - 32) * 5 / 9;
+  document.getElementById("celsius").innerHTML = "fahrenheit: °"+fahrenheit+"  converted to celsius : °"+celsius;
+  document.getElementById("roundedcelsius").innerHTML = "Rounded "+Math.round(celsius)+"°";
+}
+function convertTofahrenheit(celsius) {
+  let fahrenheit = ((9/5) * celsius) + 32;
+  document.getElementById("fahrenheit").innerHTML = "Celsius: °"+celsius+" converted to fahrenheit: °"+fahrenheit;
+  document.getElementById("roundedfahrenheit").innerHTML = "Rounded: °"+Math.round(fahrenheit);
+}
+
+</script>
+</body>
+</html>
